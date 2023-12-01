@@ -1,0 +1,186 @@
+        /* Primero hacer el modelo para celular */
+*{  
+        /* Poner siempre el margin, el padding y el box-sizing */
+Margin: 0;          
+padding: 0;
+box-sizing: border-box, ;    
+}
+
+body{                           /* Se refiere evidentemente a cambios aplicados al cuerpo "body" de la pajina */
+
+height: 100vh;
+
+display: grid;
+
+        /*Contrala las columnas*/
+grid-template-columns:  1fr;
+
+        /*Controla las filas, (Importante saber cuantas filas tienes)*/
+grid-template-rows: 40px 50px 1fr 50px; 
+
+        
+        /*Se coloca dentro de body, e indica las areas que se estan modificando*/
+grid-template-areas:    
+        "zh"            
+        "zn"
+        "zs"
+        "zf"
+}
+
+#header, nav, section y footer{ /* Otras areas de la pajina */ color: #000;}
+
+#Grid-area,Background,Color{       /* Existen header, nav, section y footer que basicamente son otras areas de la pajina*/
+
+        /* Mientras que es tos otros se colocan dentro de:
+        header, nav, section, y footer respectivamente */
+grid-area: zh, zn, zs, zf;
+
+        /* Controla el color de las letras */
+color: white;
+
+        /* Controla el color de fondo */
+background-color: #000;
+
+        /* backgound es modificable */
+background: linear-gradient(rgb(73, 5, 39), black );
+}
+
+#Display{
+        /* display: flex; */
+display: flex;
+        /* display flex sirve para que los bloques se vean esparcidos */
+        
+        /* display: block */
+display: block;
+        /* display block Los elementos de bloque ocupan todo el ancho disponible y comienzan en una nueva línea*/
+        
+        /* display: contents; */
+display: contents;
+        /* Cuando se aplica display: contents; a un elemento, el contenedor en sí mismo no genera una caja visual, 
+        y en su lugar, los elementos hijos directos son tratados como si estuvieran directamente dentro del contenedor padre. 
+        En otras palabras, el contenedor "desaparece" visualmente, y sus hijos directos toman su lugar en la jerarquía del DOM. */
+}
+
+#Flex{
+/* flex */
+        /* Dirección de Diseño: */
+flex-direction:column; 
+        /* Define la dirección principal de los elementos hijos dentro del contenedor flex. 
+        Puede ser row (por defecto, de izquierda a derecha), 
+        column (de arriba a abajo), 
+        row-reverse (de derecha a izquierda) o 
+        column-reverse (de abajo a arriba).Alineación: */
+
+        /* flex-wrap */
+flex-wrap: wrap;
+        /*    */
+}
+
+#Text{
+        /* text-shadow */
+text-shadow: 1px 1px 3px rgb(250, 206, 10);
+}
+
+#Box{
+        /* box-shadow */
+box-shadow: 1px 1px 5px black;
+}
+
+#Justify{
+        /* justify-content: center; Alinea/Justifica el contenido */
+justify-content: center; 
+        /* Controla la alineación de los elementos en el eje principal (horizontal para row y row-reverse, vertical para column y column-reverse). */
+
+        /* space-evenly */
+justify-content: space-evenly;
+        /* misma distancia entre todos los elementos */
+
+}
+
+#Align{
+        /* Alineacion */
+align-items:center;
+        /* Alinea los elementos a lo largo del eje transversal (vertical para row y row-reverse, horizontal para column y column-reverse). */
+
+        /* space-evenly */
+align-content: space-evenly; 
+        /* que cumpla condiciones: mas de un objetos y que halla display
+        align-items: center; >> centro normal */
+}
+
+#Font{
+        /* font-family */
+font-family:'Courier New', Courier, monospace;
+        /* Especifica la familia de fuentes o el nombre de la fuente que se utilizará. */
+
+        /* font-size */
+font-size:large;
+        /* Establece el tamaño de la fuente. Puede ser un valor absoluto (como 12px), relativo (como 1.2em), o una palabra clave (como medium). */
+
+        /* font-style:  */
+font-style: italic;
+        /* Define el estilo de la fuente (normal, itálica o oblicua). */
+
+        /* font-variant:  */
+font-variant: small-caps;
+        /* Controla si el texto debería mostrarse en mayúsculas y minúsculas (normal o small-caps). */
+
+        /* font-weight:  */
+font-weight: 100;
+        /* Especifica el grosor del trazo de la fuente (normal, bold, más grueso o más delgado). */
+        
+        /* line-height:  */
+line-height: 0%;
+        /* Determina la altura de línea dentro de un bloque de texto. */
+}
+
+#Padding{
+        /* padding */
+padding: 0px;
+        /* La propiedad padding en CSS se utiliza para agregar espacio 
+        alrededor del contenido de un elemento, dentro de su borde. Puedes establecer el padding en uno, dos, tres o cuatro valores, 
+        dependiendo de tus necesidades. */
+
+        /* Los paddin tambien se pueden colocar en distintos lugares con distintos tamaños: */
+padding-left: 0%;
+padding-right: 0px;
+
+}
+
+:hover{                 /* Por Ejemplo: div:hover{}  Se utiliza para cualquier elemento 
+                        que quieras que cambie al pasar el raton por encima.*/
+
+        /* cursor */
+cursor: pointer;
+        /* se utiliza para que el raton cambie de forma. Suele usarse dentro de :hover */
+}
+
+#MEDIA SCREEN{
+/* MEDIA SCREEN*/
+        /* Ajustar la web al dispositivo visor DEVE DE IR
+        SIEMPRE AL FINAL Y ORDENADO POR min-width ascendente*/ color: #000;}
+
+        /* Si tu visor es mayor de 800px, cambia esto */
+@media screen and (min-width:800px) {
+        section > div {
+            width: 48%; 
+        }       /* Puedes realizar CALQUIER TIPO DE CAMBIO 
+                que le harias por ejemplo a un body, nav,*/
+}
+@media screen and (min-width:1600px) {
+        /* Si tu visor es mayor de 1600px, cambia esto */
+body {
+        grid-template-columns: 20% 1fr 20%;
+        grid-template-rows: 40px 1fr 50px ;
+        grid-template-areas:
+            "zh zh zh"
+            "zn zs za"
+            "zf zf zf"
+    }
+    nav {
+        display: block;
+        }
+    nav > div {
+        margin: 15px;
+    }
+}
